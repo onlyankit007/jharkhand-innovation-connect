@@ -38,7 +38,7 @@ document.getElementById("app").innerHTML=`
 <nav class="nav" aria-label="Main navigation">
 <button class="nav-btn" onclick="home()">Home</button><button class="nav-btn" onclick="submitPage()">Submit</button><button class="nav-btn" onclick="trackPage()">Track</button><button class="nav-btn" onclick="universitiesPage()">Universities</button><button class="nav-btn" onclick="explore()">Explore</button>
 <button class="icon-btn" aria-label="Accessibility settings" onclick="toggleSettings()">A</button><button class="primary" onclick="login()">Login / Register</button>
-</nav></header>${content}<footer class="footer"><div class="container"><b>Jharkhand Innovation Connect</b><br><small>A transparent ecosystem for community challenges, university innovation and industry collaboration.</small></div></footer>`}
+</nav></header>${content}<footer class="footer"><div class="container"><b>Jharkhand Innovation Connect</b><br><small>A transparent ecosystem for community challenges, university innovation and industry collaboration.</small></div></footer>`; requestAnimationFrame(setupMotion)}
 
 function home(){
 shell(`<main id="main">
@@ -50,7 +50,7 @@ shell(`<main id="main">
 <div class="trust-row"><span>✓ Transparent tracking</span><span>✓ Role-based portals</span><span>✓ Evidence-led milestones</span></div>
 </div>
 <div class="hero-dashboard"><div class="hero-window"><div class="window-head"><div class="window-dots"><i></i><i></i><i></i></div><span class="window-label">LIVE PROJECT WORKSPACE</span></div>
-<div class="hero-kpis"><div class="hero-kpi"><b>1,247</b><small>Challenges</small></div><div class="hero-kpi"><b>267</b><small>Solutions</small></div><div class="hero-kpi"><b>51</b><small>Deployed</small></div></div>
+<div class="hero-kpis"><div class="hero-kpi"><b class="count-up" data-count="1247">0</b><small>Challenges</small></div><div class="hero-kpi"><b class="count-up" data-count="267">0</b><small>Solutions</small></div><div class="hero-kpi"><b class="count-up" data-count="51">0</b><small>Deployed</small></div></div>
 <div class="hero-activity">
 <div class="activity-line"><div class="activity-icon">✓</div><div><b>University matched</b><small>JIC-2026-000124 • 92% fit</small></div></div>
 <div class="activity-line"><div class="activity-icon">↗</div><div><b>Prototype milestone updated</b><small>Progress moved to 68%</small></div></div>
@@ -58,22 +58,22 @@ shell(`<main id="main">
 </div></div></div></div></section>
 
 <div class="container stat-wrap"><div class="stats">
-<div class="stat"><strong>1,247</strong><span>Challenges submitted</span><div class="up">↑ 12.4% this month</div></div>
-<div class="stat"><strong>932</strong><span>Validated challenges</span><div class="up">↑ 8.1% this month</div></div>
-<div class="stat"><strong>267</strong><span>Solutions developed</span><div class="up">↑ 14.7% this month</div></div>
-<div class="stat"><strong>51</strong><span>Community deployments</span><div class="up">↑ 6.2% this month</div></div>
+<div class="stat"><strong class="count-up" data-count="1247">0</strong><span>Challenges submitted</span><div class="up">↑ 12.4% this month</div></div>
+<div class="stat"><strong class="count-up" data-count="932">0</strong><span>Validated challenges</span><div class="up">↑ 8.1% this month</div></div>
+<div class="stat"><strong class="count-up" data-count="267">0</strong><span>Solutions developed</span><div class="up">↑ 14.7% this month</div></div>
+<div class="stat"><strong class="count-up" data-count="51">0</strong><span>Community deployments</span><div class="up">↑ 6.2% this month</div></div>
 </div></div>
 
-<section class="section"><div class="container"><div class="section-head"><div><h2>From problem to impact</h2><p>A single, visible lifecycle for every challenge.</p></div></div>
+<section class="section reveal"><div class="container"><div class="section-head"><div><h2>From problem to impact</h2><p>A single, visible lifecycle for every challenge.</p></div></div>
 <div class="process">${[["01","Submit","Citizen shares the problem"],["02","Analyze","AI assists classification"],["03","Match","Find right expertise"],["04","Build","University + industry"],["05","Impact","Pilot, deploy, verify"]].map(x=>`<div class="process-card"><div class="process-no">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p></div>`).join("")}</div></div></section>
 
-<section class="section" style="background:var(--surface)"><div class="container"><div class="section-head"><div><h2>Impact intelligence</h2><p>Sample analytics for the prototype dashboard.</p></div><button class="secondary" onclick="governmentDashboard()">Open dashboard</button></div>
+<section class="section reveal" style="background:var(--surface)"><div class="container"><div class="section-head"><div><h2>Impact intelligence</h2><p>Sample analytics for the prototype dashboard.</p></div><button class="secondary" onclick="governmentDashboard()">Open dashboard</button></div>
 <div class="bento">
-<div class="panel"><h3>Challenges received</h3><div class="panel-sub">Illustrative monthly trend</div><div class="chart">${[92,115,132,146,171,196,218,177,0].map((v,i)=>`<div class="chart-col"><span class="chart-val">${v||""}</span><div class="chart-bar" style="height:${Math.max(4,v/2.2)}px"></div><span class="chart-label">${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"][i]}</span></div>`).join("")}</div><div class="legend"><span><i style="background:var(--primary)"></i>Challenges received</span><span>Demo values</span></div></div>
-<div class="panel"><h3>Domain mix</h3><div class="panel-sub">Illustrative portfolio distribution</div><div class="donut-row"><div class="donut"><div class="donut-center"><div><strong>1,247</strong><small>total challenges</small></div></div></div><div class="mini-list"><div class="mini-item"><span>Water & Sanitation</span><b>36%</b></div><div class="mini-item"><span>Environment</span><b>21%</b></div><div class="mini-item"><span>Education</span><b>19%</b></div><div class="mini-item"><span>Agriculture</span><b>13%</b></div><div class="mini-item"><span>Other</span><b>11%</b></div></div></div></div>
+<div class="panel"><h3>Challenges received</h3><div class="panel-sub">Illustrative monthly trend</div><div class="chart">${[92,115,132,146,171,196,218,177,0].map((v,i)=>`<div class="chart-col"><span class="chart-val">${v||""}</span><div class="chart-bar" data-chart-height="${Math.max(4,v/2.2)}px" style="--chart-height:${Math.max(4,v/2.2)}px"></div><span class="chart-label">${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"][i]}</span></div>`).join("")}</div><div class="legend"><span><i style="background:var(--primary)"></i>Challenges received</span><span>Demo values</span></div></div>
+<div class="panel"><h3>Domain mix</h3><div class="panel-sub">Illustrative portfolio distribution</div><div class="donut-row"><div class="donut" data-donut="36,21,19,13,11"><svg class="donut-ring" viewBox="0 0 100 100" aria-label="Domain mix"><circle class="donut-ring-bg" cx="50" cy="50" r="41"></circle><circle class="donut-segment" data-value="36" cx="50" cy="50" r="41" stroke="var(--primary)" pathLength="100"></circle><circle class="donut-segment" data-value="21" cx="50" cy="50" r="41" stroke="#4fb6c5" pathLength="100"></circle><circle class="donut-segment" data-value="19" cx="50" cy="50" r="41" stroke="#7d66d6" pathLength="100"></circle><circle class="donut-segment" data-value="13" cx="50" cy="50" r="41" stroke="#36a169" pathLength="100"></circle><circle class="donut-segment" data-value="11" cx="50" cy="50" r="41" stroke="#c6d0db" pathLength="100"></circle></svg><div class="donut-hole"></div><div class="donut-center"><div><strong class="count-up" data-count="1247">0</strong><small>total challenges</small></div></div></div><div class="mini-list domain-legend"><div class="mini-item domain-water"><span><i></i>Water &amp; Sanitation</span><b>36%</b></div><div class="mini-item domain-environment"><span><i></i>Environment</span><b>21%</b></div><div class="mini-item domain-education"><span><i></i>Education</span><b>19%</b></div><div class="mini-item domain-agriculture"><span><i></i>Agriculture</span><b>13%</b></div><div class="mini-item domain-other"><span><i></i>Other</span><b>11%</b></div></div></div></div>
 </div></div></section>
 
-<section class="section"><div class="container"><div class="section-head"><div><h2>Challenges in motion</h2><p>Publicly visible progress snapshots.</p></div><button class="secondary" onclick="explore()">Explore all</button></div><div class="challenge-grid">${challenges.slice(0,3).map(card).join("")}</div></div></section>
+<section class="section reveal"><div class="container"><div class="section-head"><div><h2>Challenges in motion</h2><p>Publicly visible progress snapshots.</p></div><button class="secondary" onclick="explore()">Explore all</button></div><div class="challenge-grid">${challenges.slice(0,3).map(card).join("")}</div></div></section>
 </main>`)}
 
 function card(c){return `<article class="card challenge-card"><div class="row"><span class="tag">${esc(c.category)}</span><span class="status ${c.progress===100?"green":c.progress>70?"orange":"blue"}">${esc(c.status)}</span></div><h3>${esc(c.title)}</h3><p>${esc(c.district)}, Jharkhand • ${esc(c.id)}</p><div class="tags"><span class="tag">Priority: ${esc(c.priority)}</span><span class="tag">${c.progress}% complete</span></div><div class="progress"><span style="width:${c.progress}%"></span></div><div style="display:flex;justify-content:space-between;margin-top:9px;font-size:.73rem"><span class="meta">Current progress</span><b>${c.progress}%</b></div><button class="secondary" style="margin-top:13px" onclick="trackSpecific('${esc(c.id)}')">Open tracker</button></article>`}
@@ -121,11 +121,81 @@ function closeLogin(){document.getElementById("loginModal")?.remove()}
 function portal(role){
 closeLogin();if(role==="Citizen"){submitPage();return}
 const stats={University:["24","11","38","Assigned challenges"],Industry:["18","7","29","Active partnerships"],Government:["1,247","418","51","Total challenges"]}[role];
-shell(`<main id="main" class="side-layout"><aside class="sidebar"><div class="sidebar-head"><b>${role} Portal</b><br><small>Innovation workspace</small></div><button class="side-btn active">▣ Overview</button><button class="side-btn">◫ Challenges</button><button class="side-btn">◈ Projects</button><button class="side-btn">◎ Analytics</button><button class="side-btn">🔔 Notifications</button><button class="side-btn">⚙ Profile</button></aside><section class="dashboard"><div class="page-head"><div><span class="pill">${role.toUpperCase()} PORTAL</span><h1>${role} dashboard</h1><p>Monitor activity, progress and outcomes.</p></div></div><div class="kpi-grid"><div class="stat"><strong>${stats[0]}</strong><span>${stats[3]}</span></div><div class="stat"><strong>${stats[1]}</strong><span>Active projects</span></div><div class="stat"><strong>${stats[2]}</strong><span>Completed outcomes</span></div><div class="stat"><strong>LIVE</strong><span>Realtime-ready</span></div></div><div class="bento" style="margin-top:18px"><div class="panel"><h3>Project progress</h3><div class="panel-sub">Sample portfolio view</div><div class="chart">${[68,84,52,100,43].map((v,i)=>`<div class="chart-col"><span class="chart-val">${v}%</span><div class="chart-bar" style="height:${Math.max(7,v*1.7)}px"></div><span class="chart-label">${["Water","Waste","Learning","Irrigation","Transport"][i]}</span></div>`).join("")}</div></div><div class="panel"><h3>Project stages</h3><div class="panel-sub">Illustrative mix</div><div class="donut-row"><div class="donut"><div class="donut-center"><div><strong>32</strong><small>projects</small></div></div></div><div class="mini-list"><div class="mini-item"><span>Development</span><b>36%</b></div><div class="mini-item"><span>Testing</span><b>21%</b></div><div class="mini-item"><span>Pilot</span><b>19%</b></div><div class="mini-item"><span>Deployed</span><b>13%</b></div></div></div></div></div><div class="card" style="margin-top:18px"><h3>Projects requiring attention</h3><div class="table-wrap"><table class="table"><thead><tr><th>Challenge</th><th>Stage</th><th>Progress</th><th>University</th><th>Action</th></tr></thead><tbody>${challenges.map(c=>`<tr><td>${esc(c.id)}<br><b>${esc(c.title)}</b></td><td>${esc(c.status)}</td><td>${c.progress}%</td><td>${esc(c.university)}</td><td><button class="secondary" onclick="trackSpecific('${esc(c.id)}')">Open</button></td></tr>`).join("")}</tbody></table></div></div></section></main>`)}
+shell(`<main id="main" class="side-layout"><aside class="sidebar"><div class="sidebar-head"><b>${role} Portal</b><br><small>Innovation workspace</small></div><button class="side-btn active">▣ Overview</button><button class="side-btn">◫ Challenges</button><button class="side-btn">◈ Projects</button><button class="side-btn">◎ Analytics</button><button class="side-btn">🔔 Notifications</button><button class="side-btn">⚙ Profile</button></aside><section class="dashboard"><div class="page-head"><div><span class="pill">${role.toUpperCase()} PORTAL</span><h1>${role} dashboard</h1><p>Monitor activity, progress and outcomes.</p></div></div><div class="kpi-grid"><div class="stat"><strong>${stats[0]}</strong><span>${stats[3]}</span></div><div class="stat"><strong>${stats[1]}</strong><span>Active projects</span></div><div class="stat"><strong>${stats[2]}</strong><span>Completed outcomes</span></div><div class="stat"><strong>LIVE</strong><span>Realtime-ready</span></div></div><div class="bento" style="margin-top:18px"><div class="panel"><h3>Project progress</h3><div class="panel-sub">Sample portfolio view</div><div class="chart">${[68,84,52,100,43].map((v,i)=>`<div class="chart-col"><span class="chart-val">${v}%</span><div class="chart-bar" data-chart-height="${Math.max(7,v*1.7)}px" style="--chart-height:${Math.max(7,v*1.7)}px"></div><span class="chart-label">${["Water","Waste","Learning","Irrigation","Transport"][i]}</span></div>`).join("")}</div></div><div class="panel"><h3>Project stages</h3><div class="panel-sub">Illustrative mix</div><div class="donut-row"><div class="donut" data-donut="36,21,19,13"><svg class="donut-ring" viewBox="0 0 100 100" aria-label="Project stages"><circle class="donut-ring-bg" cx="50" cy="50" r="41"></circle><circle class="donut-segment" data-value="36" cx="50" cy="50" r="41" stroke="var(--primary)" pathLength="100"></circle><circle class="donut-segment" data-value="21" cx="50" cy="50" r="41" stroke="#4fb6c5" pathLength="100"></circle><circle class="donut-segment" data-value="19" cx="50" cy="50" r="41" stroke="#7d66d6" pathLength="100"></circle><circle class="donut-segment" data-value="13" cx="50" cy="50" r="41" stroke="#36a169" pathLength="100"></circle></svg><div class="donut-hole"></div><div class="donut-center"><div><strong>32</strong><small>projects</small></div></div></div><div class="mini-list"><div class="mini-item"><span>Development</span><b>36%</b></div><div class="mini-item"><span>Testing</span><b>21%</b></div><div class="mini-item"><span>Pilot</span><b>19%</b></div><div class="mini-item"><span>Deployed</span><b>13%</b></div></div></div></div></div><div class="card" style="margin-top:18px"><h3>Projects requiring attention</h3><div class="table-wrap"><table class="table"><thead><tr><th>Challenge</th><th>Stage</th><th>Progress</th><th>University</th><th>Action</th></tr></thead><tbody>${challenges.map(c=>`<tr><td>${esc(c.id)}<br><b>${esc(c.title)}</b></td><td>${esc(c.status)}</td><td>${c.progress}%</td><td>${esc(c.university)}</td><td><button class="secondary" onclick="trackSpecific('${esc(c.id)}')">Open</button></td></tr>`).join("")}</tbody></table></div></div></section></main>`)}
 function governmentDashboard(){portal("Government")}
 
 function toggleSettings(){const o=document.getElementById("settingsPanel");if(o){o.remove();return}const scale=parseFloat(localStorage.getItem(FONT_KEY)||"1");document.body.insertAdjacentHTML("beforeend",`<section class="settings" id="settingsPanel" aria-label="Accessibility settings"><div style="display:flex;justify-content:space-between;align-items:center"><strong>Accessibility</strong><button class="small-btn" onclick="document.getElementById('settingsPanel').remove()">Close</button></div><div class="settings-row"><span>Dark mode</span><button class="small-btn" onclick="toggleTheme()">Toggle</button></div><div class="settings-row"><span>Text size</span><div class="font-btns"><button class="small-btn" onclick="changeFont(-.1)">A−</button><button class="small-btn" onclick="resetFont()">A</button><button class="small-btn" onclick="changeFont(.1)">A+</button></div></div><div class="settings-row"><span>Scale</span><b>${Math.round(scale*100)}%</b></div><small class="meta">Preferences are saved in this browser.</small></section>`)}
 function toggleTheme(){const c=document.documentElement.dataset.theme||"light";localStorage.setItem(THEME_KEY,c==="dark"?"light":"dark");prefs();toggleSettings();toast("Theme updated")}
 function changeFont(d){const c=parseFloat(localStorage.getItem(FONT_KEY)||"1");const n=Math.max(.9,Math.min(1.4,+(c+d).toFixed(1)));localStorage.setItem(FONT_KEY,String(n));prefs();toggleSettings();toast("Text size updated")}
 function resetFont(){localStorage.setItem(FONT_KEY,"1");prefs();toggleSettings();toast("Text size reset")}
+
+function animateCounters(root=document){
+  root.querySelectorAll(".count-up").forEach(el=>{
+    if(el.dataset.counted==="1") return;
+    const target=Number(el.dataset.count||0); el.dataset.counted="1";
+    const duration=1100; const start=performance.now();
+    const step=(now)=>{
+      const p=Math.min(1,(now-start)/duration);
+      const eased=1-Math.pow(1-p,3);
+      el.textContent=Math.round(target*eased).toLocaleString("en-IN");
+      if(p<1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}
+function setupMotion(){
+  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealEls=document.querySelectorAll(".reveal");
+  const prepareDonuts=()=>{
+    document.querySelectorAll(".donut").forEach(donut=>{
+      let offset=0;
+      donut.querySelectorAll(".donut-segment").forEach(seg=>{
+        const value=Number(seg.dataset.value)||0;
+        seg.style.strokeDasharray="0 100";
+        seg.style.strokeDashoffset="0";
+        seg.dataset.finalDasharray=`${value} ${100-value}`;
+        seg.dataset.finalOffset=String(-offset);
+        offset+=value;
+      });
+    });
+  };
+  const animateDonuts=(root=document)=>{
+    root.querySelectorAll(".donut").forEach((donut,di)=>{
+      donut.querySelectorAll(".donut-segment").forEach((seg,i)=>setTimeout(()=>{
+        seg.classList.add("donut-ready");
+        seg.style.strokeDasharray=seg.dataset.finalDasharray||"0 100";
+        seg.style.strokeDashoffset=seg.dataset.finalOffset||"0";
+      },di*80+i*110));
+    });
+  };
+  prepareDonuts();
+  if(reduce){revealEls.forEach(el=>el.classList.add("is-visible"));document.querySelectorAll(".chart-bar").forEach(el=>el.classList.add("chart-ready"));document.querySelectorAll(".donut-segment").forEach(seg=>{seg.style.strokeDasharray=seg.dataset.finalDasharray||"0 100";seg.style.strokeDashoffset=seg.dataset.finalOffset||"0";});animateCounters();return;}
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      animateCounters(entry.target);
+      entry.target.querySelectorAll(".chart-bar").forEach((bar,i)=>setTimeout(()=>bar.classList.add("chart-ready"),i*70));
+      animateDonuts(entry.target);
+      io.unobserve(entry.target);
+    });
+  },{threshold:.16,rootMargin:"0px 0px -40px 0px"});
+  revealEls.forEach(el=>io.observe(el));
+  animateCounters(document.querySelector(".hero"));
+  document.querySelectorAll(".chart-bar").forEach(bar=>{
+    if(bar.closest(".reveal")) return;
+    setTimeout(()=>bar.classList.add("chart-ready"),250);
+  });
+  document.querySelectorAll(".donut").forEach(donut=>{
+    if(donut.closest(".reveal")) return;
+    setTimeout(()=>animateDonuts(donut.parentElement||document),280);
+  });
+}
+function finishLoader(){
+  const loader=document.getElementById("page-loader");
+  if(!loader) return;
+  setTimeout(()=>loader.classList.add("hide"),700);
+}
 home();
+setupMotion();
+finishLoader();
