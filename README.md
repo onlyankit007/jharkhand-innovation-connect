@@ -57,3 +57,4 @@ For the true multi-user production platform, connect this UI to Supabase/Postgre
 
 ## Branding
 The provided Jharkhand Innovation Connect logo is included as `logo.png` and is used in the website header and favicon.
+GitHub Pages deployment refreshed.
